@@ -24,42 +24,42 @@
             <ul class="navbar-nav ml-auto">
 
               <% if user_signed_in? %>
-                <li class="nav-item">
-                  <%= link_to ' Home ', user_path(current_user.id), class: 'nav-link text-light' %>
+                <li>
+                  <%= link_to "Home", user_path(current_user.id), class: 'nav-link text-light' %>
                 </li>
                 <li>
                   <a class="nav-link text-light" href="/users">
-                    " Users "
+                    Users
                   </a>
                 </li>
                 <li>
                   <a class="nav-link text-light" href="/books">
-                    " Books "
+                    Books
                   </a>
                 </li>
-                <li class="nav-item">
-                  <%= link_to " Log out ", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+                <li>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
                 </li>
 
               <% else %>
                 <li>
                   <a class="nav-link text-light" href="/">
-                    " Home "
+                    Home
                   </a>
                 </li>
                 <li>
                   <a class="nav-link text-light" href="/home/about">
-                    " About "
+                    About
                   </a>
                 </li>
                 <li>
                   <a class="nav-link text-light" href="/users/sign_up">
-                    " Sign up "
+                    Sign up
                   </a>
                 </li>
                 <li>
                   <a class="nav-link text-light" href="/users/sign_in">
-                    " Log in "
+                    Log in
                   </a>
                 </li>
               <% end %>

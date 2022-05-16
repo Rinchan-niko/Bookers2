@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
     # ここを/users/idにする
   end
 
+  def after_sign_out_path_for(resource)
+    about_path
+    # ここをhomeにする
+  end
+
   protected
 
   def configure_permitted_parameters
