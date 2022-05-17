@@ -1,6 +1,16 @@
 <h1>Books 編集</h1>
 
 <h2>Editing Book</h2>
+
+<% if @book.errors.any? %>
+  <%= pluralize(@book.errors.count, "error") %> prohibited this obj from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @book do |f| %>
 
   <label for="inputTitle">Title</label>

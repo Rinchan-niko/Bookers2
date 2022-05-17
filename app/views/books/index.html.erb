@@ -1,6 +1,15 @@
 <h1>Books 一覧</h1>
 
-<%= render 'users/list', user: @user %>
+<% if @book.errors.any? %>
+  <%= pluralize(@book.errors.count, "error") %> prohibited this obj from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render 'users/list', user: @user, book: @nbook %>
 
 <% @books.each do |book| %>
 <div>
