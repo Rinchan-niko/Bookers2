@@ -83,7 +83,8 @@
     </header>
 
     <main class="mb-auto">
-    <%= yield %>
+      <p id="notice"><%= flash[:notice] %></p>
+      <%= yield %>
     </main>
 
     <footer>
