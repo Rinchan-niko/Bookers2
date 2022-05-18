@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
   <head>
     <title>Bookers2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <script src="https://kit.fontawesome.com/767a1db23a.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -25,42 +26,54 @@
 
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to "Home", user_path(current_user.id), class: 'nav-link text-light' %>
+                  <%= link_to user_path(current_user.id), class: 'nav-link text-light' do %>
+                    <i class="fa-solid fa-house-chimney"></i>
+                    Home
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light" href="/users">
+                  <%= link_to users_path, class: 'nav-link text-light' do %>
+                    <i class="fa-solid fa-users"></i>
                     Users
-                  </a>
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light" href="/books">
+                  <%= link_to books_path, class: 'nav-link text-light' do %>
+                    <i class="fa-solid fa-book-open"></i>
                     Books
-                  </a>
+                  <% end %>
                 </li>
                 <li>
-                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+                  <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do %>
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Log out
+                  <% end %>
                 </li>
 
               <% else %>
                 <li>
-                  <a class="nav-link text-light" href="/">
+                  <%= link_to root_path, class: 'nav-link text-light' do %>
+                    <i class="fa-solid fa-house-chimney"></i>
                     Home
-                  </a>
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light" href="/home/about">
+                  <%= link_to about_path, class: 'nav-link text-light' do %>
+                    <i class="fa-solid fa-link"></i>
                     About
-                  </a>
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light" href="/users/sign_up">
+                  <%= link_to "/users/sign_up", class: 'nav-link text-light' do %>
+                    <i class="fa-solid fa-user-plus"></i>
                     Sign up
-                  </a>
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link text-light" href="/users/sign_in">
+                  <%= link_to "/users/sign_in", class: 'nav-link text-light' do %>
+                    <i class="fa-solid fa-right-to-bracket"></i>
                     Log in
-                  </a>
+                  <% end %>
                 </li>
               <% end %>
             </ul>
